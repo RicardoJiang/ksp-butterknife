@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -32,6 +33,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+    kotlin {
+        sourceSets {
+            main.kotlin.srcDirs += 'build/generated/ksp'
+        }
+    }
 }
 
 dependencies {
@@ -45,5 +51,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation project(":butterknife-ksp")
+    implementation project(':butterknife-annotation')
+    ksp project(':butterknife-ksp-compiler')
 }
