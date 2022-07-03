@@ -1,3 +1,1 @@
-com.zj.butterknife_ksp.TestProcessorProvider
-com.zj.butterknife_ksp.BuilderProcessorProvider
 com.zj.butterknife_ksp.ButterKnifeProcessorProvider
